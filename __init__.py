@@ -1,6 +1,6 @@
 from mycroft import MycroftSkill, intent_file_handler
 import subprocess
-update_command = "dnf -y upgrade"
+update_command = "sudo dnf -y upgrade"
 
 class SystemUpdate(MycroftSkill):
     def __init__(self):
