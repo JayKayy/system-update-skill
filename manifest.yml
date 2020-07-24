@@ -12,17 +12,20 @@
 #
 #   # Install packages with the system package manager
 #   # This searches for the provided executable and uses the package names
-#   system:
+   system:
 #     # For simple packages, this is all that is necessary
-#     all: pianobar piano-dev
+#     all: pianobar piano-dev dnf 
+     all: dnf 
 #
 #     # If the package has a certain name on a different platform:
 #     pkcon: pianobar libpiano-dev  # For the mycroft platform
 #     apt-get: pianobar libpiano-dev  # For Ubuntu/Debian
 #
 #   # Require certain executables to be in the PATH for the install to succeed
-#   exes:
+   exes:
 #     - pianobar
+     - bash
+     - dnf
 #
 #   # Require the installation of other skills before installing this skill
 #   skill:
