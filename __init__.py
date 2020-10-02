@@ -1,4 +1,4 @@
-from mycroft import MycroftSkill, intent_file_handler
+from mycroft import MycroftSkill, intent_handler
 import subprocess
 update_command = "sudo dnf -y upgrade"
 
@@ -11,6 +11,8 @@ class SystemUpdate(MycroftSkill):
         self.speak_dialog('update.system')
         process =  subprocess.Popen(update_command.split(), stdout=subprocess.PIPE)
         output, error = process.communicate()
+        if error == None:
+            self.speak_dialog('Upgrade completed successfully')
 
 
 def create_skill():
